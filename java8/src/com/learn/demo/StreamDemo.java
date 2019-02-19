@@ -1,5 +1,7 @@
 package com.learn.demo;
 
+import org.junit.Test;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -110,9 +112,17 @@ public class StreamDemo {
     /**
      * 测试 规约（将流中所有元素反复结合起来，得到一个值） Reduce
      */
+    @Test
     public void testReduce(){
         List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
         Integer sum = numbers.stream().reduce(0, (a, b) -> a + b);
         System.out.println(sum);
+
+        //找到卡路里最高的一道菜
+        Dish powerfulDish = menu.stream()
+                .reduce(new Dish("default",false, 100, Dish.Type.OTHER), (d1, d2) -> {
+                    return d1.getCalories() > d2.getCalories() ? d1 : d2;
+                });
+        System.out.println("最高卡路里菜是：" + powerfulDish.getName() + "  "+ powerfulDish.getCalories() + "卡路里");
     }
 }

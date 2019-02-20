@@ -1,4 +1,4 @@
-package com.learn.demo;
+package com.learn.demo.ch5;
 
 import org.junit.Test;
 

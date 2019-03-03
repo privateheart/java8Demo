@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @author : huyi
@@ -81,6 +82,13 @@ public class StreamDemo {
                 .map(name -> name.split(""))//将单词转换成由其字母构成的数组
                 .flatMap(Arrays::stream)//将各个生成流扁平化为单个流
                 .distinct().collect(Collectors.toList());
+        Stream<String> stream = menu.stream()
+                .map(Dish::getName)
+                .map(name -> name.split(""))//将单词转换成由其字母构成的数组
+                .flatMap(Arrays::stream);
+        Stream<String[]> stream2 = menu.stream()
+                .map(Dish::getName)
+                .map(name -> name.split(""));
 
         //给定列表 [1,2,3] 和列表 [3,4],应该返回[(1,3),(1,4),(2,3),(2,4),(3,3),(3,4)]
         List<Integer> numbers1 = Arrays.asList(1, 2, 3);

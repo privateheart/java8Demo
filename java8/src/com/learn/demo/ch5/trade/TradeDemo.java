@@ -11,7 +11,7 @@ import static java.util.Comparator.comparing;
  * @author : huyi
  * @Project: java8Demo
  * @Package com.learn.demo.ch5.trade
- * @Description: 练习
+ * @Description: 练习  使用学习到的Stream API 完成交易数据的 查询
  * @date Date : 2019年02月20日 19:05
  */
 public class TradeDemo {
@@ -20,7 +20,7 @@ public class TradeDemo {
     static Trader mario = new Trader("Mario", "Milan");
     static Trader alan = new Trader("Alan", "Cambridge");
     static Trader brian = new Trader("Brian", "Cambridge");
-    static List<Transaction> transactions = Arrays.asList(
+    public static List<Transaction> transactions = Arrays.asList(
             new Transaction(brian,2011,300),
             new Transaction(raoul,2012,1000),
             new Transaction(raoul,2011,400),

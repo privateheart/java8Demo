@@ -16,7 +16,7 @@ import java.util.stream.Stream;
  * @date Date : 2019年02月16日 16:53
  */
 public class StreamDemo {
-    static List<Dish> menu;
+    public static List<Dish> menu;
     static {
         menu = Arrays.asList(
                 new Dish("pork",false,800, Dish.Type.MEAT),
